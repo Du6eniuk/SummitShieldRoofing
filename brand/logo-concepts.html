@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summit Shield Roofing — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Big+Shoulders+Display:wght@700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600;1,9..144,700&family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --page: #f2f1ed;
+    --card: #ffffff;
+    --ink: #15181e;
+    --muted: #5f6672;
+    --line: #e3e1db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.55 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px 72px; }
+
+  /* Sheet header */
+  .sheet-head { padding: 52px 4px 4px; }
+  .kicker { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: clamp(28px, 4.2vw, 42px); line-height: 1.12; letter-spacing: -.025em; margin: 10px 0 14px; }
+  .lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* Concept card */
+  .concept { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: clamp(18px, 3vw, 32px); margin-top: 28px; }
+  .concept-head { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 4px; align-items: baseline; margin-bottom: 22px; }
+  .num { font-weight: 700; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .concept-head h2 { margin: 0; font-size: 24px; letter-spacing: -.015em; }
+  .tags { grid-column: 2; font-size: 13px; color: var(--muted); font-weight: 500; }
+  .concept-head p { grid-column: 2; margin: 8px 0 0; max-width: 800px; color: #3d434d; }
+
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
+  .tile { position: relative; margin: 0; border-radius: 16px; border: 1px solid var(--line); padding: 44px 28px 30px; display: flex; align-items: center; justify-content: center; min-height: 240px; background: #fff; }
+  .tile .cap { position: absolute; top: 13px; left: 16px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .tile.dark { border-color: transparent; }
+  .tile.dark .cap { color: rgba(255,255,255,.62); }
+  .t-main { grid-column: span 7; }
+  .t-dark { grid-column: span 5; }
+  .t-icons { grid-column: span 5; gap: 26px; flex-wrap: wrap; }
+  .t-palette { grid-column: span 7; flex-direction: column; align-items: stretch; justify-content: flex-end; gap: 16px; }
+  .t-site { grid-column: 1 / -1; padding: 44px 18px 18px; background: #f7f7f5; }
+
+  .lockup { display: block; width: 100%; height: auto; }
+  .t-main .lockup { max-width: 540px; }
+  .t-dark .lockup { max-width: 400px; }
+
+  /* Icon row */
+  .appicon { width: 104px; height: 104px; border-radius: 24px; display: grid; place-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 20px rgba(0,0,0,.10); }
+  .appicon svg { width: 76%; height: 76%; }
+  .avatar { width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); }
+  .avatar svg { width: 68%; height: 68%; }
+  .favs { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .tab { display: flex; align-items: center; gap: 8px; background: #efeeea; border-radius: 8px 8px 0 0; padding: 7px 12px; font-size: 12px; color: #4a505a; }
+  .tab svg { width: 16px; height: 16px; flex: none; }
+  .favsizes { display: flex; align-items: flex-end; gap: 12px; }
+  .favsizes small { display: block; font-size: 10px; color: var(--muted); text-align: center; margin-top: 3px; }
+
+  /* Palette */
+  .swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); }
+  .sw i { display: block; height: 78px; background: var(--c); }
+  .sw div { padding: 8px 10px 10px; }
+  .sw b { display: block; font-size: 12px; font-weight: 600; }
+  .sw code { font: 500 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--muted); }
+  .sw em { display: block; font-style: normal; font-size: 11px; color: var(--muted); }
+  .type { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #3d434d; }
+  .type b { font-weight: 600; color: var(--ink); }
+
+  /* Mini website preview */
+  .mock { width: 100%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid #e3e1db; box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 14px 34px rgba(0,0,0,.08); }
+  .mock-chrome { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #ebeae6; border-bottom: 1px solid #dfddd7; }
+  .mock-chrome i { width: 9px; height: 9px; border-radius: 50%; background: #d1cfc9; }
+  .mock-chrome span { margin-left: 10px; font-size: 11px; color: #8a8f98; background: #fff; border-radius: 6px; padding: 2px 12px; }
+  .mock-nav { position: relative; display: flex; align-items: center; gap: 22px; padding: 14px 28px; background: #fff; border-bottom: 1px solid #eee; }
+  .mock-logo { height: 44px; width: auto; flex: none; }
+  .mock-links { display: flex; gap: 22px; margin-left: auto; font-size: 13px; font-weight: 500; color: #3b4250; }
+  .mock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+  .mock-hero { position: relative; display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; padding: 50px 28px 54px; align-items: center; }
+  .mock-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .mock-hero h3 { margin: 12px 0 14px; font-size: 46px; line-height: 1.02; }
+  .mock-hero p { margin: 0 0 22px; font-size: 14px; max-width: 440px; }
+  .mock-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .mock-svcs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mock-svc { padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+  .mock-svc b { width: 28px; height: 28px; border-radius: 8px; flex: none; }
+
+  /* Concept 1 site theme */
+  .mock-c1 .mock-btn { background: #B05A24; color: #fff; }
+  .mock-c1 .mock-hero { background: radial-gradient(45% 70% at 92% 0%, rgba(219,133,71,.22), transparent 70%), radial-gradient(120% 90% at 100% 0%, #24487A 0%, #13294B 58%); color: #fff; }
+  .mock-c1 .mock-eyebrow { color: #E9A56C; }
+  .mock-c1 .mock-hero h3 { font-family: Archivo, sans-serif; font-weight: 800; letter-spacing: -.02em; }
+  .mock-c1 .mock-hero h3 em { font-style: normal; color: #E9A56C; }
+  .mock-c1 .mock-hero p { color: rgba(255,255,255,.78); }
+  .mock-c1 .ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.45); }
+  .mock-c1 .mock-svc { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: #fff; }
+  .mock-c1 .mock-svc b { border-radius: 0; background: linear-gradient(90deg, #C46A2E 50%, #E08D50 50%); clip-path: polygon(50% 8%, 100% 52%, 100% 78%, 50% 36%, 0 78%, 0 52%); }
+
+  /* Concept 2 site theme */
+  .mock-c2 .mock-btn { background: #B4502A; color: #fff; border-radius: 999px; }
+  .mock-c2 .mock-nav { border-bottom: 0; margin-bottom: 0; }
+  .mock-c2 .mock-nav::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 11px; z-index: 1;
+    background: radial-gradient(circle at 50% 0, #C0582F 0 9px, transparent 9.5px) 0 0 / 20px 11px repeat-x; }
+  .mock-c2 .mock-hero { background: #F5EDE1; color: #1F4B3F; padding-top: 60px; }
+  .mock-c2 .mock-eyebrow { color: #B4502A; }
+  .mock-c2 .mock-hero h3 { font-family: Fraunces, Georgia, serif; font-weight: 700; letter-spacing: -.015em; }
+  .mock-c2 .mock-hero h3 em { font-style: italic; font-weight: 600; color: #C0582F; }
+  .mock-c2 .mock-hero p { color: #4b5f58; }
+  .mock-c2 .ghost { background: transparent; color: #1F4B3F; box-shadow: inset 0 0 0 1.5px #1F4B3F; }
+  .mock-c2 .mock-svc { background: #fff; color: #1F4B3F; box-shadow: 0 1px 2px rgba(31,75,63,.08), 0 6px 16px rgba(31,75,63,.08); }
+  .mock-c2 .mock-svc b { background: #C0582F; border-radius: 5px 5px 14px 14px; }
+  .mock-c2 .mock-svc:nth-child(2n) b { background: #1F4B3F; }
+
+  /* Concept 3 site theme */
+  .mock-c3 .mock-nav { background: #1D2228; border-bottom-color: #1D2228; --c3-word: #fff; --c3-roof: #fff; --c3-rule: #5B636E; }
+  .mock-c3 .mock-links { color: rgba(255,255,255,.82); }
+  .mock-c3 .mock-btn { background: #F5B01A; color: #1D2228; border-radius: 6px; text-transform: uppercase; letter-spacing: .06em; }
+  .mock-c3 .mock-hero { background: repeating-linear-gradient(-74deg, rgba(255,255,255,.045) 0 2px, transparent 2px 26px), linear-gradient(165deg, #2B323B 0%, #15191E 75%); color: #fff; }
+  .mock-c3 .mock-eyebrow { color: #F5B01A; }
+  .mock-c3 .mock-hero h3 { font-family: "Big Shoulders Display", Impact, sans-serif; font-weight: 900; text-transform: uppercase; font-size: 60px; line-height: .92; letter-spacing: .005em; }
+  .mock-c3 .mock-hero h3 em { font-style: normal; color: #F5B01A; }
+  .mock-c3 .mock-hero p { color: rgba(255,255,255,.78); }
+  .mock-c3 .ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.45); }
+  .mock-c3 .mock-svc { background: rgba(255,255,255,.05); border-left: 3px solid #F5B01A; border-radius: 4px; color: #fff; font-family: "Big Shoulders Display", Impact, sans-serif; font-weight: 800; font-size: 18px; letter-spacing: .04em; text-transform: uppercase; }
+  .mock-c3 .mock-svc:nth-child(2n) { border-left-color: #8A94A0; }
+  .mock-c3 .mock-svc b { display: none; }
+
+  .sheet-foot { margin-top: 32px; padding: 24px 28px; border-radius: 18px; border: 1px dashed #cfccc4; color: #3d434d; }
+  .sheet-foot h2 { font-size: 16px; margin: 0 0 6px; }
+  .sheet-foot p { margin: 0; }
+
+  @media (max-width: 900px) {
+    .grid > * { grid-column: 1 / -1; }
+    .mock-links { display: none; }
+    .mock-hero { grid-template-columns: 1fr; }
+    .mock-hero h3 { font-size: 36px; }
+    .mock-c3 .mock-hero h3 { font-size: 48px; }
+  }
+  @media (max-width: 560px) {
+    .tile { min-height: 0; padding: 40px 18px 24px; }
+    .t-main, .t-dark { min-height: 160px; }
+    .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mock-nav { padding: 12px 16px; }
+    .mock-nav .mock-btn { display: none; }
+    .mock-logo { height: 38px; }
+    .mock-hero { padding: 36px 18px 40px; }
+    .mock-c2 .mock-hero { padding-top: 46px; }
+    .mock-svcs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mock-svc { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
+    .mock-svc b { width: 24px; height: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Shared SVG definitions ===================== -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+    <!-- Concept 2: tile shield. The mask cuts the ridge gap and the tile joints so the background shows through. -->
+    <clipPath id="c2-clip">
+      <path d="M50 8 L86 30 V54 C86 75 71 88 50 96 C29 88 14 75 14 54 V30 Z"/>
+    </clipPath>
+    <clipPath id="c2-field">
+      <polygon points="50,24.5 104,57.5 104,110 -4,110 -4,57.5"/>
+    </clipPath>
+    <mask id="c2-mask" maskUnits="userSpaceOnUse" x="-5" y="-5" width="110" height="110">
+      <rect x="-5" y="-5" width="110" height="110" fill="#fff"/>
+      <polygon points="50,21 104,54 104,57.5 50,24.5 -4,57.5 -4,54" fill="#000"/>
+      <path clip-path="url(#c2-field)" fill="none" stroke="#000" stroke-width="2.4" d="M14 28a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M14 40.5a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M14 53a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M14 65.5a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M14 78a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M14 90.5a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0a7.2 7.2 0 0 0 14.4 0M28.4 10V100M42.8 10V100M57.2 10V100M71.6 10V100"/>
+    </mask>
+  </defs>
+
+  <!-- Concept 1: copper roof cap over a faceted shield -->
+  <symbol id="c1-mark" viewBox="0 0 100 100">
+    <polygon points="50,5 50,17 5,44.9 5,32.9" style="fill: var(--c1-roof-l, #B8622B)"/>
+    <polygon points="50,5 95,32.9 95,44.9 50,17" style="fill: var(--c1-roof-r, #DB8547)"/>
+    <path d="M50 21.5 V95.5 C29 87.5 14 75 14 56 V43.82 Z" style="fill: var(--c1-shield-l, #13294B)"/>
+    <path d="M50 21.5 L86 43.82 V56 C86 75 71 87.5 50 95.5 Z" style="fill: var(--c1-shield-r, #21406E)"/>
+  </symbol>
+
+  <!-- Concept 2: shield laid with barrel tiles under a ridge cap -->
+  <symbol id="c2-mark" viewBox="0 0 100 100">
+    <g mask="url(#c2-mask)">
+      <path d="M50 8 L86 30 V54 C86 75 71 88 50 96 C29 88 14 75 14 54 V30 Z" style="fill: var(--c2-tile, #C0582F)"/>
+      <polygon clip-path="url(#c2-clip)" points="50,0 104,33 104,54 50,21 -4,54 -4,33" style="fill: var(--c2-ridge, #1F4B3F)"/>
+    </g>
+  </symbol>
+
+  <!-- Concept 3: wind-driven rain stopped by a heavy roofline -->
+  <symbol id="c3-mark" viewBox="0 0 100 100">
+    <polygon points="50,42 94,75 94,90 50,57 6,90 6,75" style="fill: var(--c3-roof, #1D2228)"/>
+    <g stroke-width="7.5" stroke-linecap="round" style="stroke: var(--c3-rain, #F5B01A)">
+      <line x1="37" y1="24.5" x2="32" y2="42.5"/>
+      <line x1="55" y1="11" x2="50" y2="29"/>
+      <line x1="73" y1="24.5" x2="68" y2="42.5"/>
+    </g>
+  </symbol>
+
+  <!-- Lockups (mark + wordmark). Each outer <svg> uses viewBox "0 0 W H" matching the symbol's size. -->
+  <symbol id="c1-lockup" viewBox="4 4 518 110">
+    <use href="#c1-mark" x="0" y="0" width="118" height="118"/>
+    <text x="128" y="65" font-family="Archivo" font-weight="800" font-size="46" letter-spacing="0.5" style="fill: var(--c1-word, #13294B)">SUMMIT SHIELD</text>
+    <rect x="128.5" y="84.75" width="127.46" height="2.5" rx="1.25" style="fill: var(--c1-rule, #C46A2E)"/>
+    <text x="267.96" y="91" font-family="Archivo" font-weight="700" font-size="14" letter-spacing="7.5" style="fill: var(--c1-sub, #B05A24)">ROOFING</text>
+    <rect x="392.04" y="84.75" width="127.46" height="2.5" rx="1.25" style="fill: var(--c1-rule, #C46A2E)"/>
+  </symbol>
+
+  <symbol id="c2-lockup" viewBox="15 7 454 108">
+    <use href="#c2-mark" x="0" y="0" width="118" height="118"/>
+    <text x="112" y="66" font-family="Fraunces" font-weight="700" font-size="50" style="fill: var(--c2-word, #1F4B3F)">Summit Shield</text>
+    <text x="114" y="92" font-family="Inter" font-weight="700" font-size="13" letter-spacing="5" style="fill: var(--c2-sub, #B4502A)">ROOFING</text>
+    <path fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--c2-scallop, #C0582F)" d="M215.5 85.4a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0a3.621 3.621 0 0 0 7.243 0"/>
+    <text x="379.62" y="92" font-family="Inter" font-weight="700" font-size="13" letter-spacing="5" style="fill: var(--c2-sub, #B4502A)">FLORIDA</text>
+  </symbol>
+
+  <symbol id="c3-lockup" viewBox="6 6 514 102">
+    <use href="#c3-mark" x="0" y="0" width="118" height="118"/>
+    <text x="122" y="66" font-family="Big Shoulders Display" font-weight="900" font-size="66" letter-spacing="1" style="fill: var(--c3-word, #1D2228)">SUMMIT SHIELD</text>
+    <rect x="123" y="76" width="144.97" height="24" style="fill: var(--c3-tag, #F5B01A)"/>
+    <text x="137" y="93.5" font-family="Inter" font-weight="800" font-size="15" letter-spacing="8" style="fill: var(--c3-tagtext, #1D2228)">ROOFING</text>
+    <rect x="279" y="86.75" width="238.08" height="2.5" style="fill: var(--c3-rule, #1D2228)"/>
+  </symbol>
+</svg>
+
+<main class="wrap">
+  <header class="sheet-head">
+    <div class="kicker">Brand exploration · Round 1</div>
+    <h1>Summit Shield Roofing — logo concepts</h1>
+    <p class="lede">Three directions, each with a palette that carries straight into the website. Every mark is vector, holds up at favicon size, and works on light and dark backgrounds.</p>
+  </header>
+
+  <!-- ===================== Concept 1 ===================== -->
+  <section class="concept" id="concept-1">
+    <header class="concept-head">
+      <span class="num">01</span>
+      <h2>Summit Crest</h2>
+      <span class="tags">Trusted · premium · established</span>
+      <p>The name, drawn literally: a copper roof cap sits over a navy shield, so the mark reads as protection from the top down. The two halves are faceted like light hitting a ridge line. Navy and copper feel premium and stand apart from the red-and-black look most roofers use.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 518 110" role="img" aria-label="Summit Shield Roofing, concept 1"><use href="#c1-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#13294B; --c1-shield-l:#fff; --c1-shield-r:#D3DCEA; --c1-roof-l:#CF7536; --c1-roof-r:#EDA266; --c1-word:#fff; --c1-sub:#EDA266; --c1-rule:#CF7536"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 518 110" role="img" aria-label="Concept 1 on dark"><use href="#c1-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#13294B; --c1-shield-l:#fff; --c1-shield-r:#D3DCEA; --c1-roof-l:#CF7536; --c1-roof-r:#EDA266"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg></div>
+        <div class="avatar" style="background:#F6F1EA"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg>Summit Shield Roofing</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#13294B"><i></i><div><b>Deep Navy</b><code>#13294B</code><em>Text, dark sections</em></div></div>
+          <div class="sw" style="--c:#21406E"><i></i><div><b>Harbor</b><code>#21406E</code><em>Secondary, icons</em></div></div>
+          <div class="sw" style="--c:#C46A2E"><i></i><div><b>Copper</b><code>#C46A2E</code><em>Brand, buttons</em></div></div>
+          <div class="sw" style="--c:#E9A56C"><i></i><div><b>Sunlit Copper</b><code>#E9A56C</code><em>Accents on dark</em></div></div>
+          <div class="sw" style="--c:#F6F1EA"><i></i><div><b>Linen</b><code>#F6F1EA</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Archivo ExtraBold</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c1">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>summitshieldroofing.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 518 110" aria-hidden="true"><use href="#c1-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Storm Damage</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Free Inspection</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Florida roofing contractor</span>
+              <h3>Protection from the <em>top down.</em></h3>
+              <p>Roof replacements, repairs and storm restoration, installed to Florida code and backed in writing.</p>
+              <div class="mock-ctas"><span class="mock-btn">Book a Free Inspection</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Roof Replacement</div>
+              <div class="mock-svc"><b></b>Roof Repair</div>
+              <div class="mock-svc"><b></b>Storm Damage</div>
+              <div class="mock-svc"><b></b>Inspections</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Concept 2 ===================== -->
+  <section class="concept" id="concept-2">
+    <header class="concept-head">
+      <span class="num">02</span>
+      <h2>Florida Tile</h2>
+      <span class="tags">Local · warm · handcrafted</span>
+      <p>A shield laid with clay barrel tiles under a palm-green ridge cap, like the Spanish-style roofs found all over Florida. The soft serif makes it feel like a local, family-run crew. Terracotta, palm green and sand give the site a warm, sun-baked look, and the tile scallop carries through as a detail.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 454 108" role="img" aria-label="Summit Shield Roofing Florida, concept 2"><use href="#c2-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#1F4B3F; --c2-tile:#D2683A; --c2-ridge:#F3E6D0; --c2-word:#F5EDE1; --c2-sub:#EFA27A; --c2-scallop:#D2683A"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 454 108" role="img" aria-label="Concept 2 on dark"><use href="#c2-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#F5EDE1"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg></div>
+        <div class="avatar" style="background:#1F4B3F; border-color:transparent; --c2-tile:#D2683A; --c2-ridge:#F3E6D0"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg>Summit Shield Roofing</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#1F4B3F"><i></i><div><b>Palm Green</b><code>#1F4B3F</code><em>Text, dark sections</em></div></div>
+          <div class="sw" style="--c:#C0582F"><i></i><div><b>Terracotta</b><code>#C0582F</code><em>Brand, buttons</em></div></div>
+          <div class="sw" style="--c:#E3A33D"><i></i><div><b>Ochre</b><code>#E3A33D</code><em>Accents, stars</em></div></div>
+          <div class="sw" style="--c:#9DB8A5"><i></i><div><b>Sage</b><code>#9DB8A5</code><em>Soft fills, icons</em></div></div>
+          <div class="sw" style="--c:#F5EDE1"><i></i><div><b>Sand</b><code>#F5EDE1</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Fraunces Bold</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c2">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>summitshieldroofing.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 454 108" aria-hidden="true"><use href="#c2-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Tile Roofs</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Free Estimate</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Family-owned · Florida roofing</span>
+              <h3>Roofs made for <em>Florida.</em></h3>
+              <p>Tile, shingle and metal roofs, installed by a local crew that treats your home like our own.</p>
+              <div class="mock-ctas"><span class="mock-btn">Get a Free Estimate</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Tile Roofs</div>
+              <div class="mock-svc"><b></b>Shingle Roofs</div>
+              <div class="mock-svc"><b></b>Metal Roofs</div>
+              <div class="mock-svc"><b></b>Roof Repair</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Concept 3 ===================== -->
+  <section class="concept" id="concept-3">
+    <header class="concept-head">
+      <span class="num">03</span>
+      <h2>Storm Ready</h2>
+      <span class="tags">Bold · tough · hurricane-ready</span>
+      <p>Wind-driven rain stopped cold by a heavy roofline: Florida’s number-one roofing worry, answered at a glance. Condensed industrial capitals and a hi-vis tag read from across the street on a truck, yard sign or crew shirt. The most “serious contractor” of the three.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 514 102" role="img" aria-label="Summit Shield Roofing, concept 3"><use href="#c3-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#1D2228; --c3-roof:#fff; --c3-word:#fff; --c3-rule:#5B636E"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 514 102" role="img" aria-label="Concept 3 on dark"><use href="#c3-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#1D2228; --c3-roof:#fff"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg></div>
+        <div class="avatar" style="background:#F5B01A; border-color:transparent; --c3-rain:#1D2228"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg>Summit Shield Roofing</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#1D2228"><i></i><div><b>Graphite</b><code>#1D2228</code><em>Text, header, footer</em></div></div>
+          <div class="sw" style="--c:#3A434E"><i></i><div><b>Slate</b><code>#3A434E</code><em>Dark cards, borders</em></div></div>
+          <div class="sw" style="--c:#F5B01A"><i></i><div><b>Hi-Vis Yellow</b><code>#F5B01A</code><em>Buttons / CTAs</em></div></div>
+          <div class="sw" style="--c:#8A94A0"><i></i><div><b>Steel</b><code>#8A94A0</code><em>Meta text, icons</em></div></div>
+          <div class="sw" style="--c:#EEF0F2"><i></i><div><b>Concrete</b><code>#EEF0F2</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Big Shoulders Display Black</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c3">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>summitshieldroofing.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 514 102" aria-hidden="true"><use href="#c3-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Storm Damage</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Call 24/7</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Hurricane-rated roofing</span>
+              <h3>Built for Florida <em>storms.</em></h3>
+              <p>Storm-rated roof replacements, fast leak repair and emergency tarping, with a crew on call around the clock.</p>
+              <div class="mock-ctas"><span class="mock-btn">Free Storm Inspection</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Storm Damage</div>
+              <div class="mock-svc"><b></b>Emergency Tarping</div>
+              <div class="mock-svc"><b></b>Roof Replacement</div>
+              <div class="mock-svc"><b></b>Leak Repair</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sheet-foot">
+    <h2>Next step</h2>
+    <p>Pick a direction, or mix and match (for example, the mark from 01 with the palette from 03). The chosen logo then gets refined and exported as final SVG/PNG files and a favicon set before the site build starts.</p>
+  </footer>
+</main>
+</body>
+</html>
